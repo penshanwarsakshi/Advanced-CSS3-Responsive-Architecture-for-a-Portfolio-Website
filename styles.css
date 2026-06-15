@@ -1,0 +1,308 @@
+/* ==========================
+   CSS VARIABLES (LIGHT MODE)
+========================== */
+:root {
+    --bg-color: #ffffff;
+    --surface-color: #f5f7fa;
+    --text-color: #222222;
+    --secondary-text: #555555;
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --border-color: #d1d5db;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    --font-heading: 'Segoe UI', sans-serif;
+    --font-body: Arial, sans-serif;
+
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* ==========================
+   DARK MODE VARIABLES
+========================== */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --surface-color: #1e1e1e;
+    --text-color: #f5f5f5;
+    --secondary-text: #cccccc;
+    --primary-color: #60a5fa;
+    --primary-hover: #3b82f6;
+    --border-color: #444444;
+    --shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+.container {
+    width: min(90%, 1200px);
+    margin: auto;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header {
+    background: var(--surface-color);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    gap: var(--spacing-md);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: var(--font-heading);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--primary-color);
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+.hero {
+    display: grid;
+    gap: 2rem;
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.btn:hover,
+.btn:focus {
+    background: var(--primary-hover);
+}
+
+/* ==========================
+   ABOUT SECTION
+========================== */
+.about {
+    padding: var(--spacing-xl) 0;
+}
+
+.about-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.about-card {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* ==========================
+   PROJECTS SECTION
+========================== */
+.projects {
+    padding: var(--spacing-xl) 0;
+}
+
+.projects-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+.project-card h3 {
+    margin-bottom: 1rem;
+}
+
+/* ==========================
+   SKILLS SECTION
+========================== */
+.skills {
+    padding: var(--spacing-xl) 0;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 50px;
+}
+
+/* ==========================
+   CONTACT FORM
+========================== */
+.contact {
+    padding: var(--spacing-xl) 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.9rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font: inherit;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+    background: var(--surface-color);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* ==========================
+   TABLET VIEW (≥768px)
+========================== */
+@media (min-width: 768px) {
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hero {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        text-align: left;
+    }
+
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================
+   DESKTOP VIEW (≥1024px)
+========================== */
+@media (min-width: 1024px) {
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* ==========================
+   LARGE SCREENS (≥1440px)
+========================== */
+@media (min-width: 1440px) {
+
+    .container {
+        max-width: 1400px;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+}
